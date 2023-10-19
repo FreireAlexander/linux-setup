@@ -1,0 +1,38 @@
+/*******************************************************************************
+ * ROFI Color theme
+ * User: Sergio Morales
+ * Copyright: Sergio Morales
+ *******************************************************************************/
+
+/*****----- Global Properties -----*****/
+@import                          "/home/zero/.config/rofi/colors.rasi"
+
+
+window {
+    location:                    north;
+    fullscreen:                  false;
+    fix-width:                       true;
+    x-offset:                    0;
+    y-offset:                    30%;
+    padding: 20px;
+    background-color: rgb(0, 0, 0, 0%);
+    border: 0px;
+    border-radius: 0px;
+    /* properties for all widgets */
+    font: "MesloLGLDZ Nerd Font Mono 32";
+}
+
+mainbox {
+    children: ["listview"];
+}
+
+listview {
+    lines: 1;
+    columns: 1;
+    children: ["element-text"];
+}
+
+element-text {
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}

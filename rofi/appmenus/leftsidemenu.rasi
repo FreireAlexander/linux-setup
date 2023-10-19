@@ -1,0 +1,536 @@
+/*******************************************************************************
+ * ROFI Color theme
+ * User: Freire Palomino
+ * Copyright: Freire Palomino
+ * Github: 
+ *******************************************************************************/
+/** Global Variables */
+
+/*****----- Configuration -----*****/
+configuration {
+	modi:                       "drun,filebrowser";
+    show-icons:                 false;
+    display-drun:               " Apps";
+    display-run:                " Run";
+    display-filebrowser:        " Files";
+    display-window:             " Windows";
+    /** 
+    drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>] -> [<span weight='light' size='small'><i>{categories}</i></span>]"; 
+    */
+	drun-display-format:        "{name}";
+    drun-categories:            "TextEditor,WebBrowser,TerminalEmulator,FileManager,Audio,Office";
+    window-thumbnail:           true;
+}
+
+/*****----- Global Properties -----*****/
+@import                          "/home/zero/.config/rofi/colors.rasi"
+
+* {
+    /** Colors must be find in colors.rasi */
+    /* Color Palette Defined by User */
+    fullopacity:                 #00000000;
+
+    /** Background and Foreground */
+    foreground:                  @white;
+    background:                  @black;
+
+    /** Color for each element in the list view */
+    normal-foreground:           @DimGray;
+    normal-background:           rgba(29, 29, 29,100%);
+
+    alternate-normal-foreground: @normal-foreground;
+    alternate-normal-background: @normal-background;
+
+    selected-normal-foreground:  @Azure;
+    selected-normal-background:  @Navy;
+
+    /** Color for active elements */
+
+    active-foreground:           @white;
+    active-background:           rgba ( 255, 255, 255, 100 % );
+
+    alternate-active-foreground: @active-foreground;
+    alternate-active-background: rgba ( 245, 245, 245, 100 % );
+
+    selected-active-foreground:  rgba ( 194, 202, 208, 100 % );
+    selected-active-background:  rgba ( 82, 148, 226, 100 % );
+
+    /** Color for Urgent elements */
+    urgent-foreground:           @white;
+    urgent-background:           @black;
+    
+    alternate-urgent-foreground: @urgent-foreground;
+    alternate-urgent-background: @yellow;
+
+    selected-urgent-foreground:  rgba ( 220, 50, 47, 100 % );
+    selected-urgent-background:  rgba ( 82, 148, 226, 100 % );
+
+    /** Box Properties */
+    background-color:            @fullopacity;
+ 
+}
+
+window {
+    /** Colors and Background */
+    background-color:            none;
+
+    /** Text and Font */
+    font:                        "MesloLGLDZ Nerd Font Mono 12";
+
+    /** Box Model */
+    width:                       30%;
+    border:                      0px;
+    border-radius:               0px;
+    border-color:                none;
+    padding:                     0px;
+
+    /** Position */
+    location:                    northwest;
+    x-offset:                    15px;
+    y-offset:                    40px;
+
+    /** Display */
+
+    /** Properties for all widgets or Miscelaneous */
+
+}
+
+mainbox {
+    /** Colors and Background */
+    background-color:            rgba(17,17,17, 80%);
+    
+    /** Text and Font */
+    
+    /** Box Model */
+    border-radius:               10px;
+    padding:                     5px;
+    
+    /** Position */
+    
+    /** Display */
+    
+    /** Properties for all widgets or Miscelaneous */
+    children:                    [ "inputbar","mode-switcher","listview"];
+
+}
+
+/* INPUTBAR */
+inputbar {
+    /** Colors and Background */
+    background-color:            rgba(17,17,17, 100%);
+    
+    /** Text and Font */
+    
+    /** Box Model */
+    border-radius:               20px;
+    margin:                      5px;
+    padding:                     5px;
+    
+    /** Position */
+    
+    /** Display */
+    
+    /** Properties for all widgets or Miscelaneous */
+    children:                    [ textbox-search-icon,entry];
+    
+}
+
+/** Nada más para el dmenu */
+case-indicator {
+    /** Colors and Background */
+    
+    /** Text and Font */
+    text-color:                  @blue;
+    
+    /** Box Model */
+    border:                      5px;
+    border-color:                @red;
+    spacing:                     20em;
+    
+    /** Position */
+    
+    /** Display */
+    
+    /** Properties for all widgets or Miscelaneous */
+
+}
+/**
+    Solo para dmenu se puede cambiar con el flag -p "Texto" 
+    Para las otras opciones esta -display-{run, drun, y así}
+    al momento de correr la aplicación
+*/
+
+prompt {
+    /** Colors and Background */
+    
+    /** Text and Font */
+    text-color: @orange;
+    
+    /** Box Model */
+    border:                      5px;
+    border-color:                @blue;
+    spacing:                     0px;
+    
+    /** Position */
+    
+    /** Display */
+    
+    /** Properties for all widgets or Miscelaneous */
+    
+}
+
+textbox-prompt-colon {
+    /** Colors and Background */
+
+    /** Text and Font */
+    text-color:                  @green;
+    
+    /** Box Model */
+    margin:                      0px 0.3em 0em 0em ;
+    
+    /** Position */
+
+    /** Display */
+    str:                         ">.";
+    
+    /** Properties for all widgets or Miscelaneous */
+    expand:                      false;
+    
+}
+
+
+entry {
+    /** Colors and Background */
+
+    
+    /** Text and Font */
+    text-color:                  @white;
+    
+    /** Box Model */
+    border:                      0px;
+    border-color:                none;
+    padding:                     0px 5px 0px;
+    spacing:                     0px;
+    
+    
+    /** Position */
+    vertical-align:              0.5;
+    
+    /** Display */
+    placeholder:                 "Input for search";
+    placeholder-color:           @SlateGray;
+    
+    /** Properties for all widgets or Miscelaneous */
+    blink:                       true;
+     
+}
+
+num-rows{
+    /** Colors and Background */
+
+    /** Text and Font */
+    text-color:                  @green;
+    text-size:                   100px;
+    text-align:                  center;
+    
+    /** Box Model */
+
+    /** Position */
+
+    /** Display */
+
+    /** Properties for all widgets or Miscelaneous */
+
+}
+
+textbox-search-icon {
+    /** Colors and Background */
+    
+    /** Text and Font */
+    text-color:                  @SlateGray;
+    font:                        "MesloLGLDZ Nerd Font Mono 30";
+    
+    /** Box Model */
+    
+    /** Position */
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    
+    /** Display */
+    content:                     "  ";
+    
+    /** Properties for all widgets or Miscelaneous */
+    expand:                      false;
+    
+}
+
+
+/* LIstview and its Elements */
+listview {
+    /** Colors and Background */
+    background-color: none;
+    
+    /** Text and Font */
+
+    /** Box Model */
+    border:       0;    
+    border-color: none;
+    border-radius: 0px;
+    margin: 5px;
+    padding: 0em;
+    spacing: 0.5em;
+    
+    /** Position */
+    
+    /** Display */
+    lines: 10;
+    columns: 1;
+    fixed-height: 0;
+
+    /** Properties for all widgets or Miscelaneous */
+    scrollbar:    false;
+    children: [element];
+
+}
+
+
+scrollbar {
+    /** Colors and Background */
+    background-color: @orange; 
+    
+    /** Text and Font */
+
+    /** Box Model */
+    width:        4px;
+    border:       4px;
+    border-color: @red;
+    padding:      0;
+
+    /** Position */
+
+    /** Display */
+    handle-width: 20px;
+    handle-color: @green;
+    
+    /** Properties for all widgets or Miscelaneous */
+    cursor: pointer;
+
+}
+
+element {
+    /** Colors and Background */
+
+    /** Text and Font */
+
+    /** Box Model */
+    border:  0;
+    border-radius: 10px;
+    padding: 5px;
+    
+    /** Position */
+
+    /** Display */
+
+    /** Properties for all widgets or Miscelaneous */
+    expand: false;
+    children: [element-icon, element-text];
+
+}
+
+element-icon {
+    /** Colors and Background */
+    
+    /** Text and Font */
+    
+    /** Box Model */
+    
+    /** Position */
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+    
+    /** Display */
+    size: 1.5em;
+        
+    /** Properties for all widgets or Miscelaneous */
+    expand: false;
+    cursor: pointer;
+
+}
+element-text {
+    /** Colors and Background */
+    background-color: inherit;
+    
+    /** Text and Font */
+    font: "MesloLGLDZ Nerd Font Mono 12";
+    text-color: inherit;
+    
+    /** Box Model */
+    padding: 10px;
+    
+    /** Position */
+    vertical-align: 0.5;
+    
+    /** Display */
+
+    /** Properties for all widgets or Miscelaneous */
+    cursor: pointer;
+
+}
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
+
+/*****----- Mode Switcher -----*****/
+mode-switcher{
+    /** Colors and Background */
+    background-color:            rgba(17,17,17, 100%);
+    /** Text and Font */
+    
+    /** Box Model */
+    border:                      0px solid;
+    border-radius:               0px;
+    margin:                      5px;
+    padding:                     0px;
+    spacing:                     10px;
+        
+    /** Position */
+    
+    /** Display */
+    
+    /** Properties for all widgets or Miscelaneous */
+    enabled:                     true;
+  
+}
+
+button {
+    /** Colors and Background */
+    background-color:            rgba(17,17, 17, 100%);
+
+    /** Text and Font */
+    font: "MesloLGLDZ Nerd Font Mono 14";
+    text-color:                  @Silver;
+    
+    /** Box Model */
+    border-radius:               10px;
+    padding:                     5px 10px;
+    
+    /** Position */
+    
+    /** Display */
+
+    /** Properties for all widgets or Miscelaneous */
+    cursor:                      pointer;
+
+}
+
+button selected {
+    border:                      0px;
+    border-color:                @white;
+    background-color:            @MidnightBlue;
+    text-color:                  @Gainsboro;
+}
+
+/*****----- Message -----*****/
+message {
+    /** Colors and Background */
+    background-color:            transparent;
+    
+    /** Text and Font */
+    text-color:                  @foreground;
+    
+    /** Box Model */
+    border:                      0px solid;
+    border-radius:               0px 0px 0px 0px;
+    border-color:                @green;
+    margin:                      0px;
+    padding:                     0px;
+    
+    /** Position */
+
+    /** Display */
+
+    /** Properties for all widgets or Miscelaneous */
+    enabled:                     true;
+    
+}
+
+textbox {
+    /** Colors and Background */
+    background-color:            @background;
+    
+    /** Text and Font */
+    text-color:                  @foreground;
+    
+    /** Box Model */
+    border:                      0px solid;
+    border-radius:               20px;
+    border-color:                @white;
+    padding:                     5px 10px;
+    
+    /** Position */
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+    
+    /** Display */
+    placeholder-color:           @foreground;
+    
+    /** Properties for all widgets or Miscelaneous */
+    highlight:                   none;
+    blink:                       true;
+    markup:                      true;
+
+}
+
+error-message {
+    /** Colors and Background */
+    background-color:            @background;
+    
+    /** Text and Font */
+    text-color:                  @foreground;
+    
+    /** Box Model */
+    border:                      2px solid;
+    border-radius:               20px;
+    border-color:                @orange;
+    padding:                     10px;
+    
+    /** Position */
+
+    /** Display */
+
+    /** Properties for all widgets or Miscelaneous */
+  
+}

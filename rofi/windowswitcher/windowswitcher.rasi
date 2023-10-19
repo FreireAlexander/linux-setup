@@ -1,0 +1,285 @@
+/*******************************************************************************
+ * ROFI Color theme
+ * User: Sergio Morales
+ * Copyright: Sergio Morales
+ *******************************************************************************/
+/*****----- Configuration -----*****/
+configuration {
+	modi:                       "window";
+    show-icons:                 true;
+    display-window:             " Windows";
+	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+	window-format:              " {w} {t}";
+    /** window-thumbnail: true; */
+}
+
+/*****----- Global Properties -----*****/
+@import                          "/home/zero/.config/rofi/colors.rasi"
+
+/* Global Variables */
+* {
+    /** Colors must be find in colors.rasi */
+    /* Color Palette Defined by User */
+    fullopacity:                 #00000000;
+    opacity33:                   #00000033;
+
+    /** Background and Foreground */
+    foreground:                  @white;
+    background:                  @black;
+
+    /** Color for each element in the list view */
+
+    normal-foreground:           @gray;
+    normal-background:           rgba ( 33, 33, 33, 100 % );
+
+    alternate-normal-foreground: @gray;
+    alternate-normal-background: rgba ( 33, 33, 33, 100 % );
+
+    selected-normal-foreground:  @LightCyan;
+    selected-normal-background:  @MidnightBlue;
+
+    /** Color for active elements */
+
+    active-foreground:           @gray;
+    active-background:           rgba ( 50, 50, 150, 100 % );
+
+    alternate-active-foreground: @active-foreground;
+    alternate-active-background: @active-background;
+
+    selected-active-foreground:  @selected-normal-foreground;
+    selected-active-background:  @selected-normal-background;
+
+    /** Color for Urgent elements */
+    urgent-background:           rgba ( 255, 255, 255, 100 % );
+    urgent-foreground:           rgba ( 220, 50, 47, 100 % );
+
+    alternate-urgent-foreground: @urgent-foreground;
+    alternate-urgent-background: rgba ( 245, 245, 245, 100 % );
+
+    selected-urgent-foreground:  rgba ( 220, 50, 47, 100 % );
+    selected-urgent-background:  rgba ( 82, 148, 226, 100 % );
+
+    /** Box Properties */
+    background-color:            @fullopacity;
+ 
+}
+
+window {
+    /** Colors and Background */
+    background-color: rgba(17, 17, 17, 90%);
+
+    /** Text and Font */
+
+    /** Box Model */
+
+    /** Position */
+    location:           center;
+    
+    /** Display */
+
+    /** Properties for all widgets or Miscelaneous */
+    
+}
+
+mainbox {
+    /** Colors and Background */
+    background-color: rgba(17, 17, 17, 80%);
+
+    /** Text and Font */
+
+    /** Box Model */
+    border:         0px;
+    border-radius:  10px;
+    border-color:   none;
+    margin:         0px;
+    padding:        20px;
+    spacing:        0px;
+    
+    /** Position */
+
+    /** Display */
+
+    /** Properties for all widgets or Miscelaneous */
+    children:       ["inputbar","listview"];
+
+}
+
+/* INPUTBAR */
+inputbar {
+    /** Colors and Background */
+    background-color: rgba(17, 17, 17, 90%);
+    
+    /** Text and Font */
+    
+    /** Box Model */
+    border-radius: 5px;
+    spacing:    0px;
+    padding:    10px ;
+    
+    /** Position */
+   
+    /** Display */
+
+    /** Properties for all widgets or Miscelaneous */
+    children:   [textbox-prompt-colon,entry];
+
+}
+
+
+textbox-prompt-colon {
+    /** Colors and Background */
+ 
+    /** Text and Font */
+    text-color: @DeepSkyBlue;
+    
+    /** Box Model */
+    
+    /** Position */
+
+    /** Display */
+    str:        "Search Window: ";
+    expand:     false;
+    
+    /** Properties for all widgets or Miscelaneous */
+
+}
+
+entry {
+    /** Colors and Background */
+
+    /** Text and Font */
+    text-color: @white;
+    
+    /** Box Model */
+    border:     0px;
+    spacing:    0px;
+    
+    /** Position */
+
+    /** Display */
+    placeholder: "Input for search";
+    placeholder-color: @DimGray;
+    
+    /** Properties for all widgets or Miscelaneous */
+    blink: true;
+
+}
+
+/* LIstview and its Elements */
+listview {
+    /** Colors and Background */
+
+    /** Text and Font */
+
+    /** Box Model */
+    border:       0px;
+    padding:      0px 0px 0px;
+    spacing:      5px;
+    
+    /** Position */
+
+    /** Display */
+    fixed-height:   true;
+    lines:          2;
+    columns:        5;
+    
+    /** Properties for all widgets or Miscelaneous */
+
+}
+
+
+element {
+    /** Colors and Background */
+
+    
+    /** Text and Font */
+
+    
+    /** Box Model */
+    border:         0px;
+    border-radius:  5px;
+    padding:        1px ;
+    
+    /** Position */
+
+    
+    /** Display */
+    orientation:    vertical;
+    
+    /** Properties for all widgets or Miscelaneous */
+    children:       [element-icon, element-text];
+
+}
+
+element-icon {
+    /** Colors and Background */
+
+    /** Text and Font */
+
+    /** Box Model */
+
+    /** Position */
+    vertical-align: 0.5;
+    
+    /** Display */
+    size: 5ch;
+    
+    /** Properties for all widgets or Miscelaneous */
+
+}
+element-text {
+    /** Colors and Background */
+    background-color: inherit;
+    
+    /** Text and Font */
+    font:       "MesloLGLDZ Nerd Font Mono 10";
+    text-color: inherit;
+    
+    /** Box Model */
+
+    /** Position */
+    vertical-align: 0.5;
+    
+    /** Display */
+    expand: true;
+    
+    /** Properties for all widgets or Miscelaneous */
+    cursor: pointer;
+    
+}
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+element.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+element.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+element.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+element.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+element.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+element.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}

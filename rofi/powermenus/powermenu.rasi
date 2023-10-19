@@ -1,0 +1,199 @@
+/*******************************************************************************
+ * ROFI Color theme
+ * User: Freire Palomino
+ * Copyright: Freire Palomino
+ * Github: 
+ *******************************************************************************/
+/* Global Variables */
+/*****----- Configuration -----*****/
+/** configuration {
+
+} */
+
+/*****----- Global Properties -----*****/
+@import                          "/home/zero/.config/rofi/colors.rasi"
+
+* { 
+    /** Colors must be find in colors.rasi */
+    /* Color Palette Defined by User */
+    /* Blue-grey Colors */
+    blue-grey-1:                 #36454f;
+    blue-grey-2:                 #536878;
+    blue-grey-3:                 #708090;
+    blue-grey-4:                 #536872;
+    blue-grey-5:                 #6e7f80;
+    deep-sky-blue:               #00bfff;
+
+    /** Colors must be find in colors.rasi */
+    /* Color Palette Defined by User */
+    fullopacity:                 #00000000;
+
+    /** Background and Foreground */
+    foreground:                  @white;
+    background:                  @black;
+
+    /* Color for each element in the list view */
+    normal-foreground:           @blue-grey-3;
+    normal-background:           @blue-grey-1;
+
+    alternate-normal-foreground: @blue-grey-3;
+    alternate-normal-background: @blue-grey-1;
+
+    selected-normal-foreground:  @Navy;
+    selected-normal-background:  @deep-sky-blue;
+
+    /* Color for active elements */
+
+    active-foreground:           rgba ( 194, 202, 208, 100 % );
+    active-background:           rgba ( 255, 255, 255, 100 % );
+
+    alternate-active-foreground: @active-foreground;
+    alternate-active-background: rgba ( 245, 245, 245, 100 % );
+
+    selected-active-foreground:  rgba ( 194, 202, 208, 100 % );
+    selected-active-background:  rgba ( 82, 148, 226, 100 % );
+
+    /* Color for Urgent elements */
+    urgent-background:           rgba ( 255, 255, 255, 100 % );
+    urgent-foreground:           rgba ( 220, 50, 47, 100 % );
+
+    alternate-urgent-foreground: @urgent-foreground;
+    alternate-urgent-background: rgba ( 245, 245, 245, 100 % );
+
+    selected-urgent-foreground:  rgba ( 220, 50, 47, 100 % );
+    selected-urgent-background:  rgba ( 82, 148, 226, 100 % );
+
+    /** Box Properties */
+    background-color:            @fullopacity;
+}
+
+window {
+    /** Colors and Background */
+    background-color:            none;
+
+    /** Text and Font */
+    font: "MesloLGLDZ Nerd Font Mono 32";
+
+    /** Box Model */
+    width:                       1em;
+    border:                      0px;
+    border-radius:               0px;
+    border-color:                none;
+    margin:                      0px;
+    padding:                     0px;
+
+    /** Position */
+    location:                    northeast;
+    anchor:                      northeast;
+    x-offset:                    -0.1em;
+    y-offset:                    0.7em;
+
+    /** Display */
+    fullscreen:                  false;
+    
+    /** Properties for all widgets or Miscelaneous */
+    enabled:                     true;  
+}
+
+mainbox {
+    /** Colors and Background */
+    background-color:            none;
+
+    /** Text and Font */
+
+    /** Box Model */
+    border:                      0px;
+    border-color:                none;
+    padding:                     0px;
+
+    /** Position */
+
+    /** Display */
+
+    /** Properties for all widgets or Miscelaneous */
+    children: ["listview"];
+}
+
+
+/** LIstview and its Elements */
+listview {
+    /** Colors and Background */
+    background-color:            none;
+
+    /** Text and Font */
+    
+    /** Box Model */
+    border:                      0px;
+    margin:                      0px;
+    padding:                     0px; 
+    spacing:                     0.1em;
+    fixed-height:                true;
+    fixed-columns:               true;
+
+    /** Position */
+
+    /** Display */
+    lines:                       5;
+    columns:                     1;
+
+    /** Properties for all widgets or Miscelaneous */
+    scrollbar:                   false;
+    children: [element-text];
+}
+
+element-text {
+    /** Colors and Background */
+    background-color:            none;
+
+    /** Text and Font */
+    text-color:                  @black;
+
+    /** Box Model */
+    border-radius:               100%;
+
+    /** Position */
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+
+    /** Display */
+
+    /** Properties for all widgets or Miscelaneous */
+    cursor: pointer;
+    
+}
+element-text.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+element-text.normal.urgent {
+    background-color: @urgent-background;
+    text-color:       @urgent-foreground;
+}
+element-text.normal.active {
+    background-color: @active-background;
+    text-color:       @active-foreground;
+}
+element-text.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+element-text.selected.urgent {
+    background-color: @selected-urgent-background;
+    text-color:       @selected-urgent-foreground;
+}
+element-text.selected.active {
+    background-color: @selected-active-background;
+    text-color:       @selected-active-foreground;
+}
+element-text.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+element-text.alternate.urgent {
+    background-color: @alternate-urgent-background;
+    text-color:       @alternate-urgent-foreground;
+}
+element-text.alternate.active {
+    background-color: @alternate-active-background;
+    text-color:       @alternate-active-foreground;
+}
